@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+    env_file:
+      - ./frontend/.env
+
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+      
+  mongo:
+    image: mongo:latest
+    ports:
+      - "50000:27017"
+    # Removed the ports section to avoid exposing MongoDB to the host
+    volumes:
+      - mongo-data:/data/db
+
+    environment:
+      - MONGO_INITDB_DATABASE=flip-test
+    networks:
+      - app-network
+
+# Define the volumes for persistence
+volumes:
+  mongo-data:
+
+# Define the networks used by the services
+networks:
+  app-network:

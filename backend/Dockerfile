@@ -19,7 +19,7 @@ COPY . .
 RUN npm run build
 
 # Step 6: Expose the port your app runs on
-EXPOSE 3030
+EXPOSE 3000
 
 # Step 7: Run your app using PM2 runtime
 CMD ["pm2-runtime", "start", "dist/main.js"]
