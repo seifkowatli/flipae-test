@@ -1,0 +1,56 @@
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #086cb3;
+  outline: 1px solid #086cb3;
+}
+
+* {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.treeRoot {
+  height: 100%;
+  padding: 32px;
+  padding-top: 0;
+}
+
+.draggingSource {
+  opacity: 0.3;
+}
+
+.dropTarget {
+  background-color: #8b87877e;
+}
+
+
+.treeRoot ul {
+  list-style: none;
+  list-style-type: none;
+  padding-left: 0;
+
+}
+.treeRoot li { 
+  display: block;
+}
